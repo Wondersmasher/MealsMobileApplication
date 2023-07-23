@@ -6,7 +6,7 @@ const CategoriesTitleGrid = ({ title, color, onPress }) => {
   return (
     <View style={styles.container}>
       <Pressable
-        style={styles.pressable}
+        style={({pressed})=>[styles.pressable, pressed? styles.pressed : null]}
         android_ripple={{ color: "#ccc" }}
         onPress={onPress}
       >
@@ -35,6 +35,9 @@ const styles = StyleSheet.create({
   },
   pressable: {
     flex: 1,
+  },
+  pressed:{
+    opacity:.5
   },
   innerContainer: {
     flex: 1,
